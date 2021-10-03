@@ -312,7 +312,7 @@ echo "unset Fauzanvpn" >> /etc/profile
 
 #hapus file
 cd
-rm -f /root/ssh-vpn.sh
+rm -f /root/Deb10.sh
 
 apt install dnsutils jq -y
 apt-get install net-tools -y
