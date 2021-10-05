@@ -255,7 +255,7 @@ wget -O wbmn "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/m
 wget -O kernel-updt "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/menu/karnel-update.sh"
 
 echo "0 8 * * * root clear-log && reboot" >> /etc/crontab
-echo "0 20 * * * root clear-log && reboot" >> /etc/crontab
+echo "0 0 * * * root clear-log && reboot" >> /etc/crontab
 
 chmod +x add-host 
 chmod +x menu
