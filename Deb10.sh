@@ -123,6 +123,15 @@ apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_PORT=22/DROPBEAR_PORT=44/g' /etc/default/dropbear
 sed -i 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 77 -p 2000 -p 4000 -p 276 -p 187 -p 143 -p 109 "/g' /etc/default/dropbear
+
+# update dropbear 2019
+wget https://matt.ucc.asn.au/dropbear/releases/dropbear-2019.78.tar.bz2
+bzip2 -cd dropbear-2019.78.tar.bz2 | tar xvf -
+cd dropbear-2019.78
+./configure
+make && make install
+mv /usr/sbin/dropbear /usr/sbin/dropbear1
+ln /usr/local/sbin/dropbear /usr/sbin/dropbear
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
@@ -253,10 +262,6 @@ wget -O ceklim "https://raw.githubusercontent.com/fardinzaga/websocketssh/master
 wget -O tendang "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/menu/tendang.sh"
 wget -O wbmn "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/menu/webmin.sh"
 wget -O kernel-updt "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/menu/karnel-update.sh"
-
-echo "0 8 * * * root clear-log && reboot" >> /etc/crontab
-echo "0 0 * * * root clear-log && reboot" >> /etc/crontab
-
 chmod +x add-host 
 chmod +x menu
 chmod +x usernew
@@ -282,6 +287,8 @@ wget https://raw.githubusercontent.com/fardinzaga/websocketssh/master/websocket/
 # Delete Acount SSH Expired
 echo "================  Auto deleted Account Expired ======================"
 wget -O /usr/local/bin/userdelexpired "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/userdelexpired" && chmod +x /usr/local/bin/userdelexpired
+
+echo "0 0 * * * root /usr/local/bin/user-expire" > /etc/cron.d/user-expire
 
 # remove unnecessary files
 cd
