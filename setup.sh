@@ -29,9 +29,9 @@ echo "IP=$host" >> /var/lib/premium-script/ipvps.conf
 echo "$host" >> /etc/v2ray/domain
 
 #install ssh ovpn
-wget https://raw.githubusercontent.com/fardinzaga/deb10/master/Deb10.sh && chmod +x Deb10.sh && screen -S Deb10.sh ./Deb10.sh
+wget https://raw.githubusercontent.com/fardinzaga/websocketssh/master/ssh-vpn.sh && chmod +x ssh-vpn.sh && screen -S ssh-vpn.sh ./ssh-vpn.sh
 
-rm -f /root/Deb10.sh
+rm -f /root/ssh-vpn.sh
 history -c
 echo "1.2" > /home/ver
 clear
@@ -43,14 +43,13 @@ echo "" | tee -a log-install.txt
 echo "--------------------------------------------------------------------------------" | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
 echo "   >>> Service & Port"  | tee -a log-install.txt
-echo "   - OpenSSH              : 22"  | tee -a log-install.txt
+echo "   - OpenSSH              : 22, 200"  | tee -a log-install.txt
 echo "   - OpenVPN              : TCP 1194, UDP 2200, SSL 442"  | tee -a log-install.txt
 echo "   - Stunnel4             : 444, 777"  | tee -a log-install.txt
 echo "   - Dropbear             : 109, 143"  | tee -a log-install.txt
-echo "   - WS SSL               : 443"  | tee -a log-install.txt
-echo "   - WebSocket            : 80, 2095"  | tee -a log-install.txt
-echo "   - WebSocket Dropbear   : 8880, 2086"  | tee -a log-install.txt
-echo "   - WebSocket  Openssh   : 2052, 2082"  | tee -a log-install.txt
+echo "   - Ws SSL/TLS           : 443, 2096"  | tee -a log-install.txt
+echo "   - WebSocket            : 2095, 2086"  | tee -a log-install.txt
+echo "   - WsOvpn               : 2082"  | tee -a log-install.txt
 echo "   - Squid Proxy          : 3128, 8080 (limit to IP Server)"  | tee -a log-install.txt
 echo "   - Badvpn               : 7100, 7200, 7300"  | tee -a log-install.txt
 echo "   - Nginx                : 81"  | tee -a log-install.txt
@@ -62,7 +61,7 @@ echo "   - Dflate               : [ON]"  | tee -a log-install.txt
 echo "   - IPtables             : [ON]"  | tee -a log-install.txt
 echo "   - Auto-Reboot          : [ON]"  | tee -a log-install.txt
 echo "   - IPv6                 : [OFF]"  | tee -a log-install.txt
-echo "   - Autoreboot On 08.00 GMT +7" | tee -a log-install.txt
+echo "   - Autoreboot On 05.00 GMT +7" | tee -a log-install.txt
 echo "   - Autobackup Data" | tee -a log-install.txt
 echo "   - Restore Data" | tee -a log-install.txt
 echo "   - Auto Delete Expired Account" | tee -a log-install.txt
@@ -70,7 +69,7 @@ echo "   - Full Orders For Various Services" | tee -a log-install.txt
 echo "   - White Label" | tee -a log-install.txt
 echo "   - Installation Log --> /root/log-install.txt"  | tee -a log-install.txt
 echo ""  | tee -a log-install.txt
-echo "   - Dev/Main            : Gapunya"  | tee -a log-install.txt
+echo "   - Dev/Main            : FauzanVpn"  | tee -a log-install.txt
 echo "   - Telegram            : Gapunya"  | tee -a log-install.txt
 echo "   - Instagram           : Gapunya"  | tee -a log-install.txt
 echo "   - Whatsapp            : Gapunya"  | tee -a log-install.txt
