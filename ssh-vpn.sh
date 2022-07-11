@@ -180,20 +180,24 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [dropbear]
-accept = 444
+accept = 445
+connect = 127.0.0.1:109
+
+[dropbear]
+accept = 777
 connect = 127.0.0.1:22
 
 [ws-stunnel]
 accept = 2096
 connect = 127.0.0.1:700
 
-[ws-ovpn]
+[ws-openvpn]
 accept = 2053
-connect = 127.0.0.1:100 
+connect = 127.0.0.1:100
 
 [openvpn]
 accept = 442
-connect = 127.0.0.1:1194
+connect = 127.0.0.1:1194 
 
 END
 
@@ -222,6 +226,7 @@ service sslh restart
 #OpenVPN
 wget https://raw.githubusercontent.com/fardinzaga/websocketssh/master/vpn/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
+#install zipovpn
 if [ ! -e /home/vps/public_html/TCP.ovpn ]; then
 cp /etc/openvpn/client-tcp-1194.ovpn /home/vps/public_html/TCP.ovpn
 cp /etc/openvpn/client-udp-2200.ovpn /home/vps/public_html/UDP.ovpn
