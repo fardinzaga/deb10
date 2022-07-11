@@ -15,10 +15,10 @@ ver=$VERSION_ID
 country=ID
 state=Indonesia
 locality=Indonesia
-organization=fauzanvpnxsetiawan
-organizationalunit=fauzanvpnxsetiawan
-commonname=fauzanvpnxsetiawan
-email=admin@fauzanvpnxsetiawan.com
+organization=fauzanvpnxanggun.com
+organizationalunit=fauzanvpnxanggun.com
+commonname=fauzanvpnxanggun.com
+email=admin@fauzanvpnxanggunvpn.com
 
 # common password debian 
 wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/password/common-password-deb9"
@@ -187,9 +187,9 @@ connect = 127.0.0.1:22
 accept = 2096
 connect = 127.0.0.1:700
 
-[dropbear]
-accept = 777
-connect = 127.0.0.1:109 
+[ws-ovpn]
+accept = 2053
+connect = 127.0.0.1:100 
 
 [openvpn]
 accept = 442
