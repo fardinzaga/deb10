@@ -1,0 +1,20 @@
+<b><p style=text-align:center"><font color="#9932CC">÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷ </font><br>
+<i><font color="green"> WELCOME TO SERVER PREMIUM VPN </font></i><br>
+<font color="#9932CC">÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷ </font><br>
+<i><u><font color="#1E90FF"> TERMS OF SERVICE : </font></u></i><br>
+<i><font color="#FFFF00">☑ NO SPAM </font><br>
+<font color="#7CFC00"> ☑ NO DDOS </font><br>
+<font color="#FFFF00"> ☑ NO HACKING </font><br>
+<font color="#7CFC00"> ☑ NO CARDING </font><br>
+<font color="#FFFF00"> ☑ NO PLAYSTATION </font><br>
+<font color="#7CFC00"> ☑ NO TORRENT </font><br>
+<font color="#FFFF00"> ☑ MAX LOGIN 2 DEVICES </font><br>
+<font color="#7CFC00"> ☑ AUTO DELETE MULTI LOGIN </font><br></i>
+<font color="#9932CC">÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷ </font><br>
+<i><font color="#FF00FF">IF YOU VIOLATE THE RULES ABOVE ACCOUNT WE WILL BE BANNED PERMANENTLY </font></i><br>
+<font color="#9932CC">÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷ </font><br>
+<u><i><font color="#1E90FF">CONTACT US : </font></u><br>
+<font color="yellow"> FAUZANVPNXANGGUN </font></i><br>
+<font color="white"> ↪️ WHATSAPP :  https://wa.me/6283180083631<br>
+<font color="#9932CC">÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷÷ </font><br>
+<u><i><font color="#FF4500"> AUTO REBOOT : 05.00 WIB GMT +7 </font></u></i></br>
