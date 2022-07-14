@@ -47,9 +47,9 @@ wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/fa
 #
 #systemctl daemon-reload
 #Enable & Start & Restart ws-dropbear service
-#systemctl enable ws-dropbear.service
-#systemctl start ws-dropbear.service
-#systemctl restart ws-dropbear.service
+systemctl enable ws-dropbear.service
+systemctl start ws-dropbear.service
+systemctl restart ws-dropbear.service
 
 #Enable & Start & Restart ws-bintang service
 systemctl enable ws-bintang.service
