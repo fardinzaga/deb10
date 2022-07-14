@@ -346,7 +346,7 @@ wget https://raw.githubusercontent.com/fardinzaga/deb10/master/lain2/install-ws.
 
 # Delete Acount SSH Expired
 echo "================  Auto deleted Account Expired ======================"
-wget -O /usr/local/bin/userdelexpired "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/userdelexpired" && chmod +x /usr/local/bin/userdelexpired
+wget -O /usr/local/bin/userdelexpired "https://raw.githubusercontent.com/fardinzaga/deb10/master/userdelexpired" && chmod +x /usr/local/bin/userdelexpired
 
 echo '#!/bin/bash' > /usr/local/bin/reboot_otomatis 
 echo 'tanggal=$(date +"%m-%d-%Y")' >> /usr/local/bin/reboot_otomatis 
