@@ -6,7 +6,7 @@ cd
 
 #Install Script Websocket-SSH Python
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/dropbear-ws.py
-wget -O /usr/local/bin/ws-udin https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/udin-ws.py
+wget -O /usr/local/bin/ws-bintang https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/bintang-ws.py
 wget -O /usr/local/bin/ws-maulana https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/maulana-ws.py
 wget -O /usr/local/bin/ws-zahara https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/zahara-ws.py
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/dropbear-ws.py
@@ -15,7 +15,7 @@ wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/fardinzaga/webs
 
 #izin permision
 chmod +x /usr/local/bin/ws-dropbear
-chmod +x /usr/local/bin/ws-udin
+chmod +x /usr/local/bin/ws-bintang
 chmod +x /usr/local/bin/ws-maulana
 chmod +x /usr/local/bin/ws-zahara
 chmod +x /usr/local/bin/ws-dropbear
@@ -26,7 +26,7 @@ chmod +x /usr/local/bin/ws-ovpn
 #wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
 
 #System OpenSSH Websocket-SSH Python
-wget -O /etc/systemd/system/ws-udin.service https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/service.wsudin && chmod +x /etc/systemd/system/ws-udin.service
+wget -O /etc/systemd/system/ws-bintang.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsbintang && chmod +x /etc/systemd/system/ws-bintang.service
 
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-maulana.service https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/service.wsmaulana && chmod +x /etc/systemd/system/ws-maulana.service
@@ -51,10 +51,10 @@ wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/fa
 #systemctl start ws-dropbear.service
 #systemctl restart ws-dropbear.service
 
-#Enable & Start & Restart ws-udin service
-systemctl enable ws-udin.service
-systemctl start ws-udin.service
-systemctl restart ws-udin.service
+#Enable & Start & Restart ws-bintang service
+systemctl enable ws-bintang.service
+systemctl start ws-bintang.service
+systemctl restart ws-bintang.service
 
 #Enable & Start & Restart ws-maulana service
 systemctl enable ws-maulana.service
