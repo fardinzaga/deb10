@@ -8,7 +8,7 @@ cd
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/dropbear-ws.py
 wget -O /usr/local/bin/ws-bintang https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/bintang-ws.py
 wget -O /usr/local/bin/ws-multi https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/multi-ws.py
-wget -O /usr/local/bin/ws-zahara https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/zahara-ws.py
+wget -O /usr/local/bin/ws-openssh https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/openssh-ws.py
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/dropbear-ws.py
 wget -O /usr/local/bin/ws-fauzanvpn https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/fauzanvpn-ws.py
 wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/ws-ovpn.py && chmod +x /usr/local/bin/ws-ovpn.py
@@ -17,7 +17,7 @@ wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/fardinzaga/webs
 chmod +x /usr/local/bin/ws-dropbear
 chmod +x /usr/local/bin/ws-bintang
 chmod +x /usr/local/bin/ws-multi
-chmod +x /usr/local/bin/ws-zahara
+chmod +x /usr/local/bin/ws-openssh
 chmod +x /usr/local/bin/ws-dropbear
 chmod +x /usr/local/bin/ws-fauzanvpn
 chmod +x /usr/local/bin/ws-ovpn
@@ -32,7 +32,7 @@ wget -O /etc/systemd/system/ws-bintang.service https://raw.githubusercontent.com
 wget -O /etc/systemd/system/ws-multi.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsmulti && chmod +x /etc/systemd/system/ws-multi.service
 
 #System OpenSSH Websocket-SSH Python
-wget -O /etc/systemd/system/ws-zahara.service https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/service.wszahara && chmod +x /etc/systemd/system/ws-zahara.service
+wget -O /etc/systemd/system/ws-openssh.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsopenssh && chmod +x /etc/systemd/system/ws-openssh.service
 
 #System Dropbear Websocket-SSH Python
 wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
@@ -62,9 +62,9 @@ systemctl start ws-multi.service
 systemctl restart ws-multi.service
 
 #Enable & Start & Restart ws-zahara service
-systemctl enable ws-zahara.service
-systemctl start ws-zahara.service
-systemctl restart ws-zahara.service
+systemctl enable ws-openssh.service
+systemctl start ws-openssh.service
+systemctl restart ws-openssh.service
 
 #Enable & Start & Restart ws-dropbear service
 systemctl enable ws-dropbear.service
