@@ -220,7 +220,7 @@ cd
 apt-get install sslh -y
 
 #konfigurasi
-wget -O /etc/default/sslh "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/sslh/sslh"
+wget -O /etc/default/sslh "https://raw.githubusercontent.com/fardinzaga/deb10/master/sslh/sslh"
 service sslh restart
 
 #OpenVPN
