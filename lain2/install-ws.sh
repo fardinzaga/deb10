@@ -5,7 +5,7 @@
 cd
 
 #Install Script Websocket-SSH Python
-wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/openssh-socket.py
+wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/dropbear-ws.py
 wget -O /usr/local/bin/ws-udin https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/udin-ws.py
 wget -O /usr/local/bin/ws-maulana https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/maulana-ws.py
 wget -O /usr/local/bin/ws-zahara https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/zahara-ws.py
@@ -23,7 +23,7 @@ chmod +x /usr/local/bin/ws-fauzanvpn
 chmod +x /usr/local/bin/ws-ovpn
 
 #System OpenSSH Websocket-SSH Python
-#wget -O /etc/systemd/system/ws-openssh.service https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/service-wsopenssh && chmod +x /etc/systemd/system/ws-openssh.service
+#wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
 
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-udin.service https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/service.wsudin && chmod +x /etc/systemd/system/ws-udin.service
