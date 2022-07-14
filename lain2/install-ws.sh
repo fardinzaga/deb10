@@ -9,7 +9,7 @@ wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/fardinzaga/
 wget -O /usr/local/bin/ws-bintang https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/bintang-ws.py
 wget -O /usr/local/bin/ws-multi https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/multi-ws.py
 wget -O /usr/local/bin/ws-openssh https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/openssh-ws.py
-wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/dropbear-ws.py
+wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/ovpn-ws.py
 wget -O /usr/local/bin/ws-fauzanvpn https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/fauzanvpn-ws.py
 wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/ws-ovpn.py && chmod +x /usr/local/bin/ws-ovpn.py
 
@@ -18,12 +18,12 @@ chmod +x /usr/local/bin/ws-dropbear
 chmod +x /usr/local/bin/ws-bintang
 chmod +x /usr/local/bin/ws-multi
 chmod +x /usr/local/bin/ws-openssh
-chmod +x /usr/local/bin/ws-dropbear
+chmod +x /usr/local/bin/ws-ovpn
 chmod +x /usr/local/bin/ws-fauzanvpn
 chmod +x /usr/local/bin/ws-ovpn
 
 #System OpenSSH Websocket-SSH Python
-#wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
+wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
 
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-bintang.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsbintang && chmod +x /etc/systemd/system/ws-bintang.service
@@ -35,7 +35,7 @@ wget -O /etc/systemd/system/ws-multi.service https://raw.githubusercontent.com/f
 wget -O /etc/systemd/system/ws-openssh.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsopenssh && chmod +x /etc/systemd/system/ws-openssh.service
 
 #System Dropbear Websocket-SSH Python
-wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
+wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsovpn && chmod +x /etc/systemd/system/ws-ovpn.service
 
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-fauzanvpn.service https://raw.githubusercontent.com/fardinzaga/websocketssh/master/proxy/service-wsfauzanvpn && chmod +x /etc/systemd/system/ws-fauzanvpn.service
@@ -67,9 +67,9 @@ systemctl start ws-openssh.service
 systemctl restart ws-openssh.service
 
 #Enable & Start & Restart ws-dropbear service
-systemctl enable ws-dropbear.service
-systemctl start ws-dropbear.service
-systemctl restart ws-dropbear.service
+systemctl enable ws-ovpn.service
+systemctl start ws-ovpn.service
+systemctl restart ws-ovpn.service
 
 #Enable & Start & Restart ws-fauzanvpn service
 systemctl enable ws-fauzanvpn.service
