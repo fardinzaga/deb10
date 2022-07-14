@@ -21,7 +21,7 @@ commonname=fauzanvpnxsetiawan.com
 email=admin@fauzanvpnxsetiawan.com
 
 # common password debian 
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/password/common-password-deb9"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/fardinzaga/deb10/master/password/common-password-deb9"
 chmod +x /etc/pam.d/common-password
 
 # go to root
@@ -88,9 +88,9 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/nginx/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/fardinzaga/deb10/master/nginx/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/nginx/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/fardinzaga/deb10/master/nginx/vps.conf"
 /etc/init.d/nginx restart
 
 # Creating a SSH server config using cat eof tricks
@@ -150,7 +150,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/squid/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/fardinzaga/deb10/master/squid/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -224,7 +224,7 @@ wget -O /etc/default/sslh "https://raw.githubusercontent.com/fardinzaga/websocke
 service sslh restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/fardinzaga/websocketssh/master/vpn/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/fardinzaga/deb10/master/vpn/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 #install zipopenvpn
 if [ ! -e /home/vps/public_html/TCP.ovpn ]; then
@@ -278,8 +278,8 @@ cd
 apt install -y libxml-parser-perl
 
 # banner /etc/bnr
-wget -O /etc/bnr "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/banner/bnr"
-wget -O /etc/banner "https://raw.githubusercontent.com/fardinzaga/websocketssh/master/banner/banner"
+wget -O /etc/bnr "https://raw.githubusercontent.com/fardinzaga/deb10/master/banner/bnr"
+wget -O /etc/banner "https://raw.githubusercontent.com/fardinzaga/deb10/master/banner/banner"
 sed -i 's@#Banner@Banner /etc/banner@g' /etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/bnr"@g' /etc/default/dropbear
 
@@ -342,7 +342,7 @@ chmod +x wbmn
 chmod +x kernel-updt
 
 #install websocker SSH dan Dropbear
-wget https://raw.githubusercontent.com/fardinzaga/websocketssh/master/websocket/install-ws.sh && chmod +x install-ws.sh && ./install-ws.sh
+wget https://raw.githubusercontent.com/fardinzaga/deb10/master/lain2/install-ws.sh && chmod +x install-ws.sh && ./install-ws.sh
 
 # Delete Acount SSH Expired
 echo "================  Auto deleted Account Expired ======================"
