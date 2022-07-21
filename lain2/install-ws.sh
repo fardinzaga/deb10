@@ -9,7 +9,7 @@ wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/fardinzaga/
 wget -O /usr/local/bin/ws-bintang https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/bintang-ws.py
 wget -O /usr/local/bin/ws-multi https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/multi-ws.py
 wget -O /usr/local/bin/ws-openssh https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/openssh-ws.py
-wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/ovpn-ws.py
+wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/ovpn-ws.py && chmod +x /usr/local/bin/ovpn-ws.py
 wget -O /usr/local/bin/ws-pastibisa https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/pastibisa-ws.py
 wget -O /usr/local/bin/ws-julian https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/julian-ws.py 
 
