@@ -8,7 +8,6 @@ cd
 wget -O /usr/local/bin/ws-dropbear https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/dropbear-ws.py
 wget -O /usr/local/bin/ws-bintang https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/bintang-ws.py
 wget -O /usr/local/bin/ws-multi https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/multi-ws.py
-wget -O /usr/local/bin/ws-kagura https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/kagura-ws.py
 wget -O /usr/local/bin/ws-openssh https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/openssh-ws.py
 wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/ovpn-ws.py
 wget -O /usr/local/bin/ws-pastibisa https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/pastibisa-ws.py
@@ -18,7 +17,6 @@ wget -O /usr/local/bin/ws-julian https://raw.githubusercontent.com/fardinzaga/de
 chmod +x /usr/local/bin/ws-dropbear
 chmod +x /usr/local/bin/ws-bintang
 chmod +x /usr/local/bin/ws-multi
-chmod +x /usr/local/bin/ws-kagura
 chmod +x /usr/local/bin/ws-openssh
 chmod +x /usr/local/bin/ws-ovpn
 chmod +x /usr/local/bin/ws-pastibisa
@@ -32,9 +30,6 @@ wget -O /etc/systemd/system/ws-bintang.service https://raw.githubusercontent.com
 
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-multi.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsmulti && chmod +x /etc/systemd/system/ws-multi.service
-
-#System OpenSSH Websocket-SSH Python
-wget -O /etc/systemd/system/ws-kagura https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wskagura && chmod +x /etc/systemd/system/ws-kagura.service
 
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-openssh.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsopenssh && chmod +x /etc/systemd/system/ws-openssh.service
@@ -65,11 +60,6 @@ systemctl restart ws-bintang.service
 systemctl enable ws-multi.service
 systemctl start ws-multi.service
 systemctl restart ws-multi.service
-
-#Enable & Start & Restart ws-kagura service
-systemctl enable ws-kagura.service
-systemctl start ws-kagura.service
-systemctl restart ws-kagura.service
 
 #Enable & Start & Restart ws-openssh service
 systemctl enable ws-openssh.service
