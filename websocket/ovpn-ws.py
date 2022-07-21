@@ -4,9 +4,10 @@ import socket, threading, thread, select, signal, sys, time, getopt
 # Listen
 LISTENING_ADDR = '0.0.0.0'
 if sys.argv[1:]:
-  LISTENING_PORT = sys.argv[1]
+	LISTENING_PORT = sys.argv[1]
 else:
-  LISTENING_PORT = 100
+	LISTENING_PORT = 900
+
 # Pass
 PASS = ''
 
@@ -14,7 +15,7 @@ PASS = ''
 BUFLEN = 4096 * 4
 TIMEOUT = 60
 DEFAULT_HOST = '127.0.0.1:1194'
-RESPONSE = 'HTTP/1.1 101 <h1><font color="#FF33FF"> Fauzanvpn Switching Protocols </font></h1>\r\nContent-Length: 104857600000\r\n\r\n'
+RESPONSE = 'HTTP/1.1 101 <h1><font color="#FF00FF"> Fauzanvpn Switching Protocols </font></h1>\r\n\r\nContent-Length: 104857600000\r\n\r\n'
 
 class Server(threading.Thread):
     def __init__(self, host, port):
