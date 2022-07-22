@@ -17,6 +17,7 @@ wget -O /usr/local/bin/ws-pastibisa https://raw.githubusercontent.com/fardinzaga
 chmod +x /usr/local/bin/ws-dropbear
 chmod +x /usr/local/bin/ws-bintang
 chmod +x /usr/local/bin/ws-julian
+chmod +x /usr/local/bin/ws-kagura
 chmod +x /usr/local/bin/ws-multi
 chmod +x /usr/local/bin/ws-openssh
 chmod +x /usr/local/bin/ws-pastibisa
@@ -29,6 +30,9 @@ wget -O /etc/systemd/system/ws-bintang.service https://raw.githubusercontent.com
 
 #System Websocket-OpenVPN Python
 wget -O /etc/systemd/system/ws-julian.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsjulian && chmod +x /etc/systemd/system/ws-julian.service
+
+#System Websocket-OpenVPN Python
+wget -O /etc/systemd/system/ws-kagura.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wskagura && chmod +x /etc/systemd/system/ws-kagura.service
 
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-multi.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsmulti && chmod +x /etc/systemd/system/ws-multi.service
@@ -56,6 +60,11 @@ systemctl restart ws-bintang.service
 systemctl enable ws-julian.service
 systemctl start ws-julian.service
 systemctl restart ws-julian.service
+
+#Enable & Start ws-kagura service
+systemctl enable ws-kagura.service
+systemctl start ws-kagura.service
+systemctl restart ws-kagura.service
 
 #Enable & Start & Restart ws-multi service
 systemctl enable ws-multi.service
