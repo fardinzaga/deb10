@@ -190,6 +190,10 @@ connect = 127.0.0.1:22
 accept = 2096
 connect = 127.0.0.1:700
 
+[ws-ovpn]
+accept = 2053
+connect = 127.0.0.1:100
+
 [openvpn]
 accept = 442
 connect = 127.0.0.1:1194 
