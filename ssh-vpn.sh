@@ -186,7 +186,7 @@ connect = 127.0.0.1:109
 accept = 777
 connect = 127.0.0.1:22
 
-[ws-ovpn]
+[ws-stunnel]
 accept = 2096
 connect = 127.0.0.1:700
 
