@@ -223,7 +223,9 @@ wget -O /etc/default/sslh "https://raw.githubusercontent.com/fardinzaga/deb10/ma
 service sslh restart
 
 #OpenVPN
-wget https://raw.githubusercontent.com/fardinzaga/deb10/master/vpn/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget "https://raw.githubusercontent.com/syapik96/aws/main/install/vpn.sh"
+chmod +x vpn.sh
+./vpn.sh
 
 #install zipopenvpn
 if [ ! -e /home/vps/public_html/TCP.ovpn ]; then
