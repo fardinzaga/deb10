@@ -23,7 +23,7 @@ chmod +x /usr/local/bin/ws-pastibisa
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
 
-#System Websocket-OpenVPN Python
+#System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-julian.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsjulian && chmod +x /etc/systemd/system/ws-julian.service
 
 #System OpenSSH Websocket-SSH Python
@@ -31,6 +31,9 @@ wget -O /etc/systemd/system/ws-multi.service https://raw.githubusercontent.com/f
 
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-openssh.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsopenssh && chmod +x /etc/systemd/system/ws-openssh.service
+
+#System OpenSSH Websocket-SSH Python 
+wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsovpn && chmod +x /etc/systemd/system/ws-ovpn.service
 
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-pastibisa.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wspastibisa && chmod +x /etc/systemd/system/ws-pastibisa.service
@@ -57,6 +60,11 @@ systemctl restart ws-multi.service
 systemctl enable ws-openssh.service
 systemctl start ws-openssh.service
 systemctl restart ws-openssh.service
+
+#Enable & Start & Restart ws-ovpn service
+systemctl enable ws-ovpn.service
+systemctl start ws-ovpn.service
+systemctl restart ws-ovpn.service
 
 #Enable & Start & Restart ws-pastibisa service
 systemctl enable ws-pastibisa.service
