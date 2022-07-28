@@ -8,15 +8,15 @@ rm -f /root/domain
 rm -f /etc/v2ray/domain
 clear
 
-DOMAIN=fauzanvpn.xyz
+DOMAIN=opentunnel.tk
 #read -rp "Masukkan Domain: " -e DOMAIN
 #echo ""
 #echo "Domain: ${DOMAIN}" 
 #echo ""
 read -rp "Masukkan Subdomain: " -e sub
 SUB_DOMAIN=${sub}.${DOMAIN}
-CF_ID=zafrnavpn@nagarata.com
-CF_KEY=1c9b49618e2b7ca363e1dedbca45241e2b789
+CF_ID=adobemanmark@capitalistdilemma.com
+CF_KEY=cce5e2c760de9d849b7bce85bb836ae9a3281
 set -euo pipefail
 IP=$(wget -qO- ipinfo.io/ip);
 echo "Pointing DNS Untuk Domain ${SUB_DOMAIN}..."
