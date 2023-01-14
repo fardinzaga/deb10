@@ -186,6 +186,10 @@ connect = 127.0.0.1:109
 accept = 777
 connect = 127.0.0.1:22
 
+[stunnel]
+accept = 443
+connect = 127.0.0.1:143
+
 [ws-stunnel]
 accept = 2096
 connect = 127.0.0.1:700
