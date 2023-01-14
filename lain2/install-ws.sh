@@ -41,7 +41,7 @@ wget -O /etc/systemd/system/ws-pastibisa.service https://raw.githubusercontent.c
 #restart service
 #
 #systemctl daemon-reload
-#Enable & Start & Restart ws-dropbear service
+Enable & Start & Restart ws-dropbear service
 systemctl enable ws-dropbear.service
 systemctl start ws-dropbear.service
 systemctl restart ws-dropbear.service
