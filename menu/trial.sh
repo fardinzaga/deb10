@@ -58,6 +58,7 @@ echo -e "SQUID             :$sqd"
 echo -e "ZIP FILE          : http://$domain:81"
 echo -e "BADVPN            : 7100 , 7200 , 7300"
 echo -e "================================="
+echo -e "DIBUAT            : $useradd
 echo -e "EXPIRED ON        : $exp"
 echo -e "================================="
 echo -e "================================="
