@@ -10,7 +10,7 @@ wget -O /usr/local/bin/ws-julian https://raw.githubusercontent.com/fardinzaga/de
 wget -O /usr/local/bin/ws-multi https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/multi-ws.py
 wget -O /usr/local/bin/ws-openssh https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/openssh-ws.py
 wget -O /usr/local/bin/ws-ovpn https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/ovpn-ws.py
-wget -O /usr/local/bin/ws-pastibisa https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/pastibisa-ws.py
+#wget -O /usr/local/bin/ws-pastibisa https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/pastibisa-ws.py
 
 #izin permision
 chmod +x /usr/local/bin/ws-dropbear
@@ -18,7 +18,7 @@ chmod +x /usr/local/bin/ws-julian
 chmod +x /usr/local/bin/ws-multi
 chmod +x /usr/local/bin/ws-openssh
 chmod +x /usr/local/bin/ws-ovpn
-chmod +x /usr/local/bin/ws-pastibisa
+#chmod +x /usr/local/bin/ws-pastibisa
 
 #System OpenSSH Websocket-SSH Python
 wget -O /etc/systemd/system/ws-dropbear.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsdropbear && chmod +x /etc/systemd/system/ws-dropbear.service
@@ -36,7 +36,7 @@ wget -O /etc/systemd/system/ws-openssh.service https://raw.githubusercontent.com
 wget -O /etc/systemd/system/ws-ovpn.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wsovpn && chmod +x /etc/systemd/system/ws-ovpn.service
 
 #System OpenSSH Websocket-SSH Python
-wget -O /etc/systemd/system/ws-pastibisa.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wspastibisa && chmod +x /etc/systemd/system/ws-pastibisa.service
+#wget -O /etc/systemd/system/ws-pastibisa.service https://raw.githubusercontent.com/fardinzaga/deb10/master/websocket/service-wspastibisa && chmod +x /etc/systemd/system/ws-pastibisa.service
 
 #restart service
 #
@@ -67,6 +67,6 @@ systemctl start ws-ovpn.service
 systemctl restart ws-ovpn.service
 
 #Enable & Start & Restart ws-pastibisa service
-systemctl enable ws-pastibisa.service
-systemctl start ws-pastibisa.service
-systemctl restart ws-pastibisa.service
+#systemctl enable ws-pastibisa.service
+#systemctl start ws-pastibisa.service
+#systemctl restart ws-pastibisa.service
