@@ -37,6 +37,7 @@ echo Setting Password: $Pass
 sleep 0.5
 clear
 useradd -e `date -d "$masaaktif days" +"%Y-%m-%d"` -s /bin/false -M $Login
+hariini=`date -d "0 days" +"%Y-%m-%d"`
 exp="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 echo -e "$Pass\n$Pass\n"|passwd $Login &> /dev/null
 echo -e ""
@@ -56,7 +57,7 @@ echo -e "SQUID             :$sqd"
 echo -e "ZIP FILE          : http://$domain:81"
 echo -e "BADVPN            : 7100 , 7200 , 7300"
 echo -e "================================="
-echo -e "DIBUAT            : $useradd"
+echo -e "DIBUAT            : $hariini"
 echo -e "EXPIRED ON        : $exp"
 echo -e "================================="
 echo -e "================================="
