@@ -152,6 +152,40 @@ apt -y install squid3
 wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/fardinzaga/deb10/master/squid/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
+# Install SSLH
+apt -y install sslh
+rm -f /etc/default/sslh
+
+# Settings SSLH
+cat > /etc/default/sslh <<-END
+# Default options for sslh initscript
+# sourced by /etc/init.d/sslh
+
+# Disabled by default, to force yourself
+# to read the configuration:
+# - /usr/share/doc/sslh/README.Debian (quick start)
+# - /usr/share/doc/sslh/README, at "Configuration" section
+# - sslh(8) via "man sslh" for more configuration details.
+# Once configuration ready, you *must* set RUN to yes here
+# and try to start sslh (standalone mode only)
+
+RUN=yes
+
+# binary to use: forked (sslh) or single-thread (sslh-select) version
+# systemd users: don't forget to modify /lib/systemd/system/sslh.service
+DAEMON=/usr/sbin/sslh
+
+DAEMON_OPTS="--user sslh --listen 0.0.0.0:443 --ssl 127.0.0.1:777 --ssh 127.0.0.1:109 --openvpn 127.0.0.1:1194 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh.pid -n"
+
+end
+
+# Restart Service SSLH
+service sslh restart
+systemctl restart sslh
+/etc/init.d/sslh restart
+/etc/init.d/sslh status
+/etc/init.d/sslh restart
+
 # setting vnstat
 apt -y install vnstat
 /etc/init.d/vnstat restart
@@ -169,10 +203,24 @@ systemctl enable vnstat
 rm -f /root/vnstat-2.6.tar.gz
 rm -rf /root/vnstat-2.6
 
-# install stunnel
-apt install stunnel4 -y
-cat > /etc/stunnel/stunnel.conf <<-END
-cert = /etc/stunnel/stunnel.pem
+# install stunnel 5 
+cd /root/
+wget -q -O stunnel5.zip "https://raw.githubusercontent.com/Mr-Kenyut/AutoScript/main/stunnel5/stunnel5.zip"
+unzip -o stunnel5.zip
+cd /root/stunnel
+chmod +x configure
+./configure
+make
+make install
+cd /root
+rm -r -f stunnel
+rm -f stunnel5.zip
+mkdir -p /etc/stunnel5
+chmod 644 /etc/stunnel5
+
+# Download Config Stunnel5
+cat > /etc/stunnel5/stunnel5.conf <<-END
+cert = /etc/stunnel5/stunnel5.pem
 client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1
@@ -182,45 +230,56 @@ socket = r:TCP_NODELAY=1
 accept = 445
 connect = 127.0.0.1:109
 
-[dropbear]
+[openssh]
 accept = 777
-connect = 127.0.0.1:22
-
-[stunnel]
-accept = 443
-connect = 127.0.0.1:143
-
-[ws-stunnel]
-accept = 2096
-connect = 127.0.0.1:700
+connect = 127.0.0.1:443
 
 [openvpn]
-accept = 442
-connect = 127.0.0.1:1194 
+accept = 990
+connect = 127.0.0.1:1194
 
 END
 
-echo "=================  membuat Sertifikat OpenSSL ======================"
-echo "========================================================="
-#membuat sertifikat
-cd /etc/stunnel/
+# make a certificate
 openssl genrsa -out key.pem 2048
 openssl req -new -x509 -key key.pem -out cert.pem -days 1095 \
 -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$commonname/emailAddress=$email"
-cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
-cd
-# konfigurasi stunnel
-sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
-cd
-/etc/init.d/stunnel4 restart
-cd
-#install sslh
-cd
-apt-get install sslh -y
+cat key.pem cert.pem >> /etc/stunnel5/stunnel5.pem
 
-#konfigurasi
-wget -O /etc/default/sslh "https://raw.githubusercontent.com/fardinzaga/deb10/master/sslh/sslh"
-service sslh restart
+# Service Stunnel5 systemctl restart stunnel5
+cat > /etc/systemd/system/stunnel5.service << END
+[Unit]
+Description=Stunnel5 Service
+Documentation=https://stunnel.org
+Documentation=https://github.com/sshsedang
+After=syslog.target network-online.target
+
+[Service]
+ExecStart=/usr/local/bin/stunnel5 /etc/stunnel5/stunnel5.conf
+Type=forking
+
+[Install]
+WantedBy=multi-user.target
+END
+
+# Service Stunnel5 /etc/init.d/stunnel5
+wget -q -O /etc/init.d/stunnel5 "https://raw.githubusercontent.com/Mr-Kenyut/AutoScript/main/stunnel5/stunnel5.init"
+
+# Remove File
+rm -r -f /usr/local/share/doc/stunnel/
+rm -r -f /usr/local/etc/stunnel/
+rm -f /usr/local/bin/stunnel
+rm -f /usr/local/bin/stunnel3
+rm -f /usr/local/bin/stunnel4
+
+# Restart Stunnel 5
+systemctl stop stunnel5
+systemctl enable stunnel5
+systemctl start stunnel5
+systemctl restart stunnel5
+/etc/init.d/stunnel5 restart
+/etc/init.d/stunnel5 status
+/etc/init.d/stunnel5 restart
 
 #OpenVPN
 wget "https://raw.githubusercontent.com/syapik96/aws/main/install/vpn.sh"
