@@ -131,10 +131,10 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
 
 # setting port ssh
-cd
 sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
-sed -i '/Port 22/a Port 200' /etc/ssh/sshd_config
-sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 2253' /etc/ssh/sshd_config
+echo "Port 22" >> /etc/ssh/sshd_config
+echo "Port 42" >> /etc/ssh/sshd_config
 /etc/init.d/ssh restart
 
 # install dropbear
@@ -177,7 +177,7 @@ DAEMON=/usr/sbin/sslh
 
 DAEMON_OPTS="--user sslh --listen 0.0.0.0:443 --ssl 127.0.0.1:777 --ssh 127.0.0.1:109 --openvpn 127.0.0.1:1194 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh.pid -n"
 
-end
+END
 
 # Restart Service SSLH
 service sslh restart
